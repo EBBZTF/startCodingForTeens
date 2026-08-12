@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Level Up — From Scratch to Real Games</title>
+<meta name="description" content="You already know how to make games. Now learn to make them with real code. A starter map for young game makers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="lang" role="group" aria-label="Language / Sprache">
+  <button id="en-btn" type="button">EN</button>
+  <button id="de-btn" type="button">DE</button>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <svg class="avatar" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect width="16" height="16" fill="none"/>
+      <rect x="4" y="2" width="8" height="6" fill="#3fe0d0"/>
+      <rect x="5" y="4" width="2" height="2" fill="#14102a"/>
+      <rect x="9" y="4" width="2" height="2" fill="#14102a"/>
+      <rect x="4" y="8" width="8" height="5" fill="#ff5ea8"/>
+      <rect x="3" y="9" width="1" height="3" fill="#ff5ea8"/>
+      <rect x="12" y="9" width="1" height="3" fill="#ff5ea8"/>
+      <rect x="5" y="13" width="2" height="2" fill="#ffcf4d"/>
+      <rect x="9" y="13" width="2" height="2" fill="#ffcf4d"/>
+    </svg>
+    <h1 data-de="Du machst schon Spiele.<br><span class='c'>Jetzt mach sie richtig.</span>">You already make games.<br><span class="c">Now make them for real.</span></h1>
+    <p class="lead" data-de="Das Schwierige hast du in Scratch schon gelernt — Schleifen, Wenn-Dann, Variablen, Punkte. Der nächste Schritt ist kein Neuanfang. Du lernst nur, das zu <em>tippen</em>, was du sowieso schon denkst.">You learned the hard part in Scratch — loops, if-then, variables, scores. The next step isn't starting over. It's learning to <em>type</em> what you already think.</p>
+  </div>
+</header>
+
+<main>
+
+  <!-- GLOSSARY / WHAT IS -->
+  <section id="words">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow" data-de="Zuerst &mdash; die W&ouml;rter">First — the words</span>
+        <h2 data-de="Moment &mdash; was hei&szlig;en all diese W&ouml;rter?">Wait, what do all these words mean?</h2>
+        <p data-de="Tutorials werfen mit gruseligen W&ouml;rtern um sich, als w&auml;re jeder damit geboren. Du nicht, und das ist v&ouml;llig okay. Hier sind die wichtigsten, in einfacher Sprache.">Tutorials throw scary words around like everyone was born knowing them. You weren't, and that's fine. Here are the big ones, in plain language.</p>
+      </div>
+
+      <div class="glossary">
+        <div class="term acc-cyan reveal">
+          <span class="term-name">IDE</span>
+          <p class="def" data-de="Kurz f&uuml;r die App, in der du deinen Code schreibst und startest. Sie f&auml;rbt deine W&ouml;rter ein, zeigt Tippfehler an und hat einen &#9654;-Knopf, der dein Spiel startet.">Short for the app where you write and run your code. It colours your words, points out typos, and has a &#9654; button that launches your game.</p>
+          <p class="analogy" data-de="In Scratch: der Editor, in dem all deine Bl&ouml;cke sind.">In Scratch: the editor where all your blocks live.</p>
+        </div>
+        <div class="term acc-mag reveal">
+          <span class="term-name">Language</span>
+          <p class="def" data-de="Die W&ouml;rter und Regeln, die du tippst, um Anweisungen zu geben. Wir nehmen Python &mdash; eine der beliebtesten und eine der am leichtesten zu lesenden.">The words and rules you type to give instructions. We'll use Python — one of the most popular, and one of the easiest to read.</p>
+          <p class="analogy" data-de="In Scratch: die Bl&ouml;cke waren auch eine Sprache &mdash; nur zum Ziehen statt zum Tippen.">In Scratch: the blocks were a language too — just drag-and-drop instead of typed.</p>
+        </div>
+        <div class="term acc-gold reveal">
+          <span class="term-name">Game engine</span>
+          <p class="def" data-de="Ein Werkzeugkasten, der schon wei&szlig;, wie man Bilder zeichnet, Dinge bewegt und Zusammenst&ouml;&szlig;e erkennt &mdash; so baust du den spa&szlig;igen Teil, nicht die Technik darunter.">A toolbox that already knows how to draw pictures, move things and detect crashes — so you build the fun part, not the plumbing.</p>
+          <p class="analogy" data-de="F&uuml;r 2D-Spiele in Python: Pygame Zero und Pygame.">For 2D Python games: Pygame Zero and Pygame.</p>
+        </div>
+        <div class="term acc-green reveal">
+          <span class="term-name">Run</span>
+          <p class="def" data-de="Auf &#9654; dr&uuml;cken, damit dein Code wirklich l&auml;uft. Wenn's klappt, bewegt sich dein Spiel. Wenn nicht, kommt ein Fehler &mdash; und der ist nur ein Hinweis.">Pressing &#9654; to make your code actually happen. If it works, your game moves. If not, you get an error — and that's just a clue.</p>
+          <p class="analogy" data-de="In Scratch: auf die gr&uuml;ne Flagge klicken.">In Scratch: clicking the green flag.</p>
+        </div>
+        <div class="term acc-cyan reveal">
+          <span class="term-name">Bug / Debug</span>
+          <p class="def" data-de="Ein Bug ist, wenn dein Code etwas macht, das du nicht wolltest. Debugging hei&szlig;t, Detektiv zu spielen und rauszufinden, warum. Profis machen das den ganzen Tag.">A bug is when your code does something you didn't mean. Debugging is playing detective to find out why. Pros do this all day, every day.</p>
+          <p class="analogy" data-de="In Scratch: wenn die Figur falsch l&auml;uft und du den passenden Block suchst.">In Scratch: when the sprite goes the wrong way and you hunt for the block.</p>
+        </div>
+        <div class="term acc-mag reveal">
+          <span class="term-name">Syntax</span>
+          <p class="def" data-de="Die genaue Schreibweise und Zeichensetzung, die eine Sprache erwartet. Vergiss eine Klammer und sie meckert &mdash; nervig, aber normal und leicht zu beheben.">The exact spelling and punctuation a language expects. Forget a bracket and it complains — annoying, but normal, and easy to fix.</p>
+          <p class="analogy" data-de="In Scratch: das konntest du kaum falsch machen &mdash; Bl&ouml;cke passen nur, wo sie hingeh&ouml;ren.">In Scratch: you couldn't really get this wrong — blocks only snap where they fit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGNATURE: Scratch -> code -->
+  <section id="rosetta">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow" data-de="Level 0 &middot; du bist schon da">Level 0 · you're already here</span>
+        <h2 data-de="Jeder Scratch-Block ist nur Code im Kost&uuml;m">Every Scratch block is just code wearing a costume</h2>
+        <p data-de="Hier ist das Geheimnis, das dir keiner verr&auml;t: Die Bl&ouml;cke, die du herumgezogen hast, <em>sind</em> echte Programmier-Ideen. Geschriebener Code schreibt sie nur aus. Gleiche Idee links und rechts &mdash; nur anders geschrieben.">Here's the secret nobody tells you: the blocks you dragged around <em>are</em> real programming ideas. Written code just spells them out. Same idea, left and right — new spelling.</p>
+      </div>
+
+      <div class="rosetta reveal">
+        <div class="row">
+          <div class="sblock ctrl">repeat (10)</div>
+          <div class="arrow">→</div>
+          <div class="code"><span class="kw">for</span> i <span class="kw">in</span> <span class="fn">range</span>(10):</div>
+        </div>
+        <div class="row">
+          <div class="sblock var">set [score] to (0)</div>
+          <div class="arrow">→</div>
+          <div class="code">score = 0</div>
+        </div>
+        <div class="row">
+          <div class="sblock var">change [score] by (1)</div>
+          <div class="arrow">→</div>
+          <div class="code">score += 1</div>
+        </div>
+        <div class="row">
+          <div class="sblock ctrl">if &lt;touching edge?&gt;</div>
+          <div class="arrow">→</div>
+          <div class="code"><span class="kw">if</span> <span class="fn">hit_edge</span>():</div>
+        </div>
+        <div class="row">
+          <div class="sblock evt">when [→] key pressed</div>
+          <div class="arrow">→</div>
+          <div class="code"><span class="kw">if</span> keyboard.right:</div>
+        </div>
+        <div class="row">
+          <div class="sblock">move (10) steps</div>
+          <div class="arrow">→</div>
+          <div class="code">player.x += 10</div>
+        </div>
+        <div class="row">
+          <div class="sblock ctrl">forever</div>
+          <div class="arrow">→</div>
+          <div class="code"><span class="kw">while</span> <span class="kw">True</span>:</div>
+        </div>
+      </div>
+      <p class="rosetta-note reveal" data-de="Falls die Zeilen rechts etwas gruselig aussehen: v&ouml;llig normal &mdash; das ist nur eine neue Handschrift f&uuml;r Dinge, die dein Kopf l&auml;ngst kann. Gib ihm eine Woche, dann f&uuml;hlen sich die Bl&ouml;cke wie die langsame Version an.">If those right-hand lines look a little scary, that's normal — it's just new handwriting for stuff your brain already does. Give it a week and the blocks will start to feel like the slow version.</p>
+    </div>
+  </section>
+
+  <!-- QUEST MAP -->
+  <section id="map">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow" data-de="Die Quest-Karte">The quest map</span>
+        <h2 data-de="Drei Level zu deinem ersten Python-Spiel">Three levels to your first Python game</h2>
+        <p data-de="Versuch nicht, alles auf einmal zu lernen. Schlie&szlig; ein Level ab, dann schalte das n&auml;chste frei. Jedes baut auf dem vorherigen auf.">Don't try to learn everything at once. Beat one level, then unlock the next. Each one builds on the last.</p>
+      </div>
+
+      <div class="map">
+        <div class="level l1 reveal" data-lv="1">
+          <h3 data-de="Startklar machen">Get set up</h3>
+          <p data-de="Ein paar Installationen, einmalig, dann hast du Ruhe. Hol dir Python (die Sprache) und VS Code (wo du schreibst). &Ouml;ffne VS Code, klick links auf das Extensions-Symbol und f&uuml;g die Erweiterung <b>Python</b> von Microsoft hinzu &mdash; die bringt <b>Pylance</b> gleich mit, das deine Tippfehler findet und deine Zeilen zu Ende schreibt. Mehr brauchst du eigentlich nicht; <b>indent-rainbow</b> ist ein nettes Extra, weil Python bei den Einr&uuml;ckungen pingelig ist. Zum Schluss tippst du im VS-Code-Terminal <span class='ic'>pip install pgzero</span>, um Pygame Zero zu erg&auml;nzen &mdash; und startest jedes Spiel mit <span class='ic'>pgzrun meinspiel.py</span>.">A few one-time installs and you're set for good. Grab Python (the language) and VS Code (where you'll write it). Open VS Code, click the Extensions icon on the left, and add the <b>Python</b> extension from Microsoft — it quietly brings <b>Pylance</b> along, which catches your typos and finishes your lines. That's the only must-have; <b>indent-rainbow</b> is a nice extra, since Python is fussy about indenting. Last, in the VS Code terminal, type <span class="ic">pip install pgzero</span> to add Pygame Zero — then run any game with <span class="ic">pgzrun mygame.py</span>.</p>
+        </div>
+        <div class="level l2 reveal" data-lv="2">
+          <h3 data-de="Bring Dinge in Bewegung">Make things move</h3>
+          <p data-de="<b>Lern die Pygame-Zero-Grundlagen.</b> Bring eine Figur auf den Bildschirm, bewege sie mit den Pfeiltasten und f&uuml;g Schwerkraft hinzu, damit sie f&auml;llt. Genau das kannst du gleich unten ausprobieren."><b>Learn the Pygame Zero basics.</b> Put a character on screen, move it with the arrow keys, and add gravity so it falls. You can try exactly this in the box further down.</p>
+        </div>
+        <div class="level l3 reveal" data-lv="3">
+          <h3 data-de="Bau dein Jump-and-Run">Build your jump-and-run</h3>
+          <p data-de="<b>Setz alles zusammen.</b> Plattformen zum Draufstehen, einen Sprung, Sachen zum Ausweichen und ein Ziel. Das ist dein erstes echtes Spiel &mdash; die Tutorials daf&uuml;r sind weiter unten."><b>Put it all together.</b> Platforms to stand on, a jump, things to dodge, and a way to win. That's your first real game — the tutorials for it are further down.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIRST QUEST + LIVE DEMO -->
+  <section id="quest">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow" data-de="Deine erste Quest">Your first quest</span>
+        <h2 data-de="Bring etwas in Bewegung">Make something move</h2>
+        <p data-de="Jedes Spiel f&auml;ngt so an: Taste dr&uuml;cken, etwas bewegt sich. Probier das Feld unten mit den Pfeiltasten (oder den Kn&ouml;pfen). Der Code rechts ist dieselbe Idee in Pygame Zero.">Every game starts here: press a key, a thing moves. Try the box below with your arrow keys (or the buttons). The code on the right is the same idea in Pygame Zero.</p>
+      </div>
+
+      <div class="quest">
+        <div class="arena-box reveal">
+          <div class="arena" id="arena" tabindex="0" aria-label="Move the gold square with arrow keys">
+            <div id="sprite"></div>
+          </div>
+          <div class="hint" data-de="klick ins Feld, dann &larr; &uarr; &darr; &rarr; benutzen">click the grid, then use ← ↑ ↓ →</div>
+          <div class="dpad">
+            <span class="sp"></span>
+            <button data-dir="up" aria-label="up">▲</button>
+            <span class="sp"></span>
+            <button data-dir="left" aria-label="left">◀</button>
+            <button data-dir="down" aria-label="down">▼</button>
+            <button data-dir="right" aria-label="right">▶</button>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <h3 data-de="Das ganze Spiel in 9 Zeilen">The whole game, in 9 lines</h3>
+          <div class="code">WIDTH = 320
+HEIGHT = 320
+player = Actor(<span class="fn">'box'</span>, (40, 40))
+
+<span class="kw">def</span> <span class="fn">draw</span>():
+    screen.clear()
+    player.draw()
+
+<span class="kw">def</span> <span class="fn">update</span>():
+    <span class="kw">if</span> keyboard.right: player.x += 4
+    <span class="kw">if</span> keyboard.left:  player.x -= 4
+    <span class="kw">if</span> keyboard.up:    player.y -= 4
+    <span class="kw">if</span> keyboard.down:  player.y += 4</div>
+          <p class="quest-note" data-de="Lies es laut vor: &bdquo;Wenn die rechte Taste gedr&uuml;ckt ist, addiere 4 zum x des Spielers.&ldquo; Das ist alles. Das ist echter Code. Kommt dir bekannt vor? Das ist dein <em>move 10 steps</em>-Block &mdash; nur ausgetippt.">Read it out loud: "if the right key is down, add 4 to the player's x." That's it. That's real code. Recognize it? It's your <em>move 10 steps</em> block — just typed out.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIRST GAME LINKTREE -->
+  <section id="firstgame">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow" data-de="Boss-Level &middot; dein erstes echtes Spiel">Boss level · your first real game</span>
+        <h2 data-de="Bau ein Jump-and-Run">Build a jump-and-run</h2>
+        <p data-de="Ein Jump-and-Run (Platformer, wie Mario) ist das perfekte erste gro&szlig;e Spiel: Du rennst, du springst, du landest auf Plattformen, du weichst Sachen aus. Hier ist der genaue Weg, eins zu bauen &mdash; alles kostenlos.">A jump-and-run (platformer, like Mario) is the perfect first big game: you run, you jump, you land on platforms, you dodge stuff. Here's the exact path to build one, all free.</p>
+      </div>
+
+      <p class="lt-note reveal" data-de="Von oben nach unten arbeiten &mdash; die ersten beiden sind der sanfteste Einstieg. Alles kostenlos, alles Python.">Work top to bottom — the first two are the gentlest place to start. All free, all Python.</p>
+
+      <div class="linktree reveal">
+        <a class="lt" href="https://pygame-zero.readthedocs.io/en/stable/introduction.html" target="_blank" rel="noopener">
+          <span class="kind" data-de="anleitung">guide</span>
+          <span class="body"><b data-de="Pygame Zero: der erste Start">Pygame Zero: get started</b><span data-de="offizielle Einf&uuml;hrung &middot; eine Figur auf den Bildschirm bringen">official intro · get a character on screen</span></span>
+          <span class="free" data-de="gratis">free</span>
+        </a>
+        <a class="lt" href="https://www.penguintutor.com/projects/pygamezero-tutorial" target="_blank" rel="noopener">
+          <span class="kind" data-de="anleitung">guide</span>
+          <span class="body"><b data-de="Dein erstes Pygame-Zero-Spiel">Your first Pygame Zero game</b><span data-de="Schritt f&uuml;r Schritt &middot; mit Arbeitsblatt zum Ausdrucken">step by step · with a printable worksheet</span></span>
+          <span class="free" data-de="gratis">free</span>
+        </a>
+        <a class="lt" href="https://www.youtube.com/watch?v=C06S7gf-LpU" target="_blank" rel="noopener">
+          <span class="kind vid">▶ video</span>
+          <span class="body"><b data-de="2D-Jump-and-Run in Pygame Zero">2D jump-and-run in Pygame Zero</b><span data-de="folge Schritt f&uuml;r Schritt mit &middot; genau unser Werkzeug">follow-along video · exactly our toolset</span></span>
+          <span class="free" data-de="gratis">free</span>
+        </a>
+        <a class="lt" href="https://www.freecodecamp.org/news/create-a-platformer-game-with-python/" target="_blank" rel="noopener">
+          <span class="kind vid">▶ video</span>
+          <span class="body"><b data-de="Bau ein volles Platformer in Python">Build a full platformer in Python</b><span data-de="freeCodeCamp &middot; ~2 Std &middot; wenn die Grundlagen leicht werden">freeCodeCamp · ~2 hrs · when the basics feel easy</span></span>
+          <span class="free" data-de="gratis">free</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPLETE EXAMPLE GAME -->
+  <section id="example">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow" data-de="Ein ganzes Spiel">A whole game</span>
+        <h2 data-de="Ein fertiges Spiel &mdash; jede Zeile">Here's a finished game — every line</h2>
+        <p data-de="Das ist ein komplettes Jump-and-Run in Pygame Zero, ungef&auml;hr 90 Zeilen. Spiel es gleich hier und lies dann darunter, wie es funktioniert. Speicher es als <span class='ic'>platformer.py</span> und starte es mit <span class='ic'>pgzrun platformer.py</span>, um das echte Spiel zu spielen.">This is a complete jump-and-run in Pygame Zero, about 90 lines. Play it right here, then read exactly how it works below. Save it as <span class="ic">platformer.py</span> and run it with <span class="ic">pgzrun platformer.py</span> to play the real thing.</p>
+      </div>
+
+      <div class="example-wrap reveal">
+        <div class="play">
+          <canvas id="game" width="800" height="400" tabindex="0" aria-label="Playable example platformer"></canvas>
+          <div class="hint" data-de="klick ins Spiel, dann Pfeiltasten + Leertaste zum Springen">click the game, then arrow keys + Space to jump</div>
+          <div class="game-pad">
+            <button data-act="left" aria-label="left">◀</button>
+            <button data-act="jump" data-de="▲ spring">▲ jump</button>
+            <button data-act="right" aria-label="right">▶</button>
+          </div>
+        </div>
+
+        <div class="code-wrap">
+          <div class="code-bar">
+            <span class="file">platformer.py</span>
+            <span class="code-btns">
+              <button id="copy-btn" data-de="kopieren">copy</button>
+              <button id="dl-btn" data-de="laden">download</button>
+            </span>
+          </div>
+          <pre class="code-full"><code class="language-python" id="game-code"></code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POWER-UPS / LINK HUB -->
+  <section id="powerups">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Power-ups</span>
+        <h2 data-de="Wie es weitergeht">Where to go next</h2>
+        <p data-de="Alles kostenlos. Einmal installieren, danach schreibst und startest du nur noch.">All free. You install these once, then it's just write and run.</p>
+      </div>
+
+      <div class="tier reveal">
+        <h3 data-de="&#9656; Fang hier an">▸ Start here</h3>
+        <div class="cards">
+          <div class="card">
+            <div class="name">VS Code</div>
+            <div class="what" data-de="Wo du deinen Code schreibst. F&uuml;g die <b>Python</b>-Erweiterung hinzu (Pylance ist dabei), und du bist startklar. <b>indent-rainbow</b> ist ein praktisches Extra.">Where you write your code. Add the <b>Python</b> extension (Pylance comes with it) and you're ready; <b>indent-rainbow</b> is a handy extra.</div>
+            <div class="foot"><span class="tag free" data-de="gratis">free</span><a class="go" href="https://code.visualstudio.com" target="_blank" rel="noopener" data-de="&ouml;ffnen &rarr;">open →</a></div>
+          </div>
+          <div class="card">
+            <div class="name">Python</div>
+            <div class="what" data-de="Die Sprache selbst. Installier die zuerst, damit VS Code &uuml;berhaupt etwas zum Ausf&uuml;hren hat.">The language itself. Install this first so VS Code has something to run.</div>
+            <div class="foot"><span class="tag free" data-de="gratis">free</span><a class="go" href="https://www.python.org" target="_blank" rel="noopener" data-de="&ouml;ffnen &rarr;">open →</a></div>
+          </div>
+          <div class="card">
+            <div class="name">Pygame Zero</div>
+            <div class="what" data-de="Der einsteigerfreundliche Weg zu 2D-Spielen in Python. Genau das benutzt die Demo oben.">The beginner-friendly way to make 2D games in Python. It's what the demo above uses.</div>
+            <div class="foot"><span class="tag free" data-de="gratis">free</span><a class="go" href="https://pygame-zero.readthedocs.io" target="_blank" rel="noopener" data-de="&ouml;ffnen &rarr;">open →</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tier reveal">
+        <h3 data-de="&#9656; Level up">▸ Level up</h3>
+        <div class="cards">
+          <div class="card">
+            <div class="name">Pygame</div>
+            <div class="what" data-de="Die gr&ouml;&szlig;ere Bibliothek hinter Pygame Zero. Mehr Kontrolle, wenn deine Spiele wachsen.">The bigger library behind Pygame Zero. More control once your games grow.</div>
+            <div class="foot"><span class="tag free" data-de="gratis">free</span><a class="go" href="https://www.pygame.org" target="_blank" rel="noopener" data-de="&ouml;ffnen &rarr;">open →</a></div>
+          </div>
+          <div class="card">
+            <div class="name">Kenney</div>
+            <div class="what" data-de="Kostenlose Sprites und Plattform-Grafiken, damit dein Spiel gut aussieht, ohne dass du jeden Pixel selbst malst.">Free sprites and platform art, so your game looks good without you drawing every pixel.</div>
+            <div class="foot"><span class="tag free" data-de="gratis">free</span><a class="go" href="https://kenney.nl" target="_blank" rel="noopener" data-de="&ouml;ffnen &rarr;">open →</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="big" data-de="Steckenbleiben <span class='accent-magenta'>ist</span> das Spiel.">Getting stuck <span class="accent-magenta">is</span> the game.</p>
+    <p data-de="Jeder einzelne Profi hat schon mal eine Stunde auf einen Fehler gestarrt und dann eine fehlende Klammer gefunden. Das hei&szlig;t nicht, dass du schlecht im Coden bist &mdash; so ist Coden eben. Speichere oft, probier Sachen aus, mach Sachen kaputt, schlag nach. Du schaffst das.">Every single pro has stared at a bug for an hour, then found a missing bracket. That's not you being bad at code — that's just what coding <em>is</em>. Save often, try stuff, break stuff, look it up. You've got this.</p>
+  </div>
+</footer>
+
+<script src="main.js" defer></script>
+</body>
+</html>
