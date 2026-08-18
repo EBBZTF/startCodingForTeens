@@ -1,0 +1,7 @@
+services:
+  start-coding-for-teens:
+    build: .
+    container_name: start-coding-for-teens
+    ports:
+      - "80:80"
+    restart: unless-stopped
