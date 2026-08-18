@@ -1,14 +1,9 @@
 # startCodingForTeens
 A little website to help others get stated with coding games
 
-## Deploy
+## Deploy (Cloudflare Tunnel)
 
-Build and run the site in a container:
+1. Copy `.env.example` to `.env` and paste in the tunnel token from the Cloudflare Zero Trust dashboard (Networks > Tunnels > your tunnel > install command — the value after `--token`).
+2. `docker compose up -d --build`
 
-```
-docker compose up -d --build
-```
-
-This publishes the site on `http://localhost:80` (container name: `start-coding-for-teens`).
-
-To make it reachable via `rideandcode.dev`, in the Cloudflare dashboard under **DNS > Records**, edit the `A` records for `rideandcode.dev` and `www.rideandcode.dev` so `Content` is the public IP of the machine running this container, with `Proxy status` set to **Proxied**. Make sure that host allows inbound traffic on port `80` (and `443` if you enable HTTPS to visitors under SSL/TLS).
+This runs the site (reachable locally at `http://localhost:8080` for testing) plus a `cloudflared` connector that tunnels it out to whatever public hostname you configured in the tunnel's **Public Hostname** tab. No public IP or port forwarding needed — works from a laptop behind NAT.
