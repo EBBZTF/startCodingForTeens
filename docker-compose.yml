@@ -10,6 +10,6 @@ services:
     image: cloudflare/cloudflared:latest
     container_name: cloudflared
     restart: unless-stopped
-    command: tunnel --no-autoupdate run --token ${TUNNEL_TOKEN}
+    command: tunnel --no-autoupdate --protocol http2 run --token ${TUNNEL_TOKEN}
     depends_on:
       - start-coding-for-teens
